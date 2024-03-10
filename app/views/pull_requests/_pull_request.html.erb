@@ -2,13 +2,16 @@
   <div class="pull-request-info">
     <%= link_to "#{pull_request.repository}\##{pull_request.number}", pull_request.url %>
 
-    <p><%= pull_request.title %></p>
-    <p class="pull-request-time"><%= pull_request.merged_at&.strftime("%Y-%m-%d %H:%M") %></p>
+    <div><%= pull_request.title %></div>
+    <div class="pull-request-time"><%= pull_request.merged_at&.strftime("%Y-%m-%d %H:%M") %></div>
   </div>
   <div class="pull-request-annotations">
-    <p>Category: <strong><%= pull_request.category.name %></strong></p>
-    
-    <p>Testing Priority:  <%= pull_request.test_priority %></p>
+    <div>
+      Category: <strong><%= pull_request.category.name %></strong>
+    </div>
+    <div>
+      Test Priority:  <%= pull_request.test_priority.humanize %>
+    </div>
   </div>
   <div class="pull-request-notes"><%= pull_request.notes %></div>
   <%= link_to "Edit this pull request", edit_pull_request_path(pull_request) %>

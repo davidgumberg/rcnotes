@@ -6,7 +6,7 @@
 }
 
 .pull-request-container {
-	width: min(80%, 26rem);
+	width: min(80%, 30rem);
 }
 
 .pull-request-box {
@@ -14,11 +14,12 @@
 	flex-flow: column nowrap;
 	padding: 1rem;
 	margin: 1rem;
-	gap: .3rem;
+	gap: .6rem;
 
 	border: .22rem solid rgb(170, 60, 100);
 	border-radius: 4px 6px;
 	background: rgb(255, 240, 240);
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 .pull-request-info {
@@ -34,15 +35,22 @@
 .pull-request-annotations {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-around;
-	gap: .2em;
+	justify-content: space-evenly;
+	gap: .4em;
 }
 
 .pull-request-annotations div {
 	display: flex;
-	flex-flow: row nowrap;
+	flex-flow: column wrap;
 	align-items: center;
+	justify-content: center;
 	gap: .2em;
+
+	background: rgb(150 150 150 / 0.4);
+	border-radius: 5px;
+	padding: .2rem .5rem;
+	border: .12rem solid rgb(190, 80, 120);
+	box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
 }
 
 .pull-request-notes {

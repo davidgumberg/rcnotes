@@ -12,9 +12,8 @@
     <% end %>
     <div class="pull-request-info">
       <%= link_to "#{pull_request.repository}\##{pull_request.number}", pull_request.url %>
-
-      <p><%= pull_request.title %></p>
-      <p class="pull-request-time"><%= pull_request.merged_at&.strftime("%Y-%m-%d %H:%M") %></p>
+      <div><%= pull_request.title %></div>
+      <div class="pull-request-time"><%= pull_request.merged_at&.strftime("%Y-%m-%d %H:%M") %></div>
     </div>
     <div class="pull-request-annotations">
         <div>
@@ -22,7 +21,7 @@
           <%= form.select :category_id, category_select_options(selected: pull_request.category_id)  %>
         </div>
         <div>
-          <%= form.label :test_priority %>
+          <%= form.label :test_priority, "Test Priority" %>
           <%= form.select :test_priority, options_for_select(PullRequest.test_priorities.keys, pull_request.test_priority) %>
         </div>
     </div>
