@@ -6,7 +6,13 @@ class PullRequestsController < ApplicationController
     @sort = params[:sort] || :merged_at
     @order = params[:order] || :asc
 
-    @pull_requests = PullRequest.unscoped.order(@sort => @order)
+    if @sort == "category"
+      @pull_requests = PullRequest.joins(:category).order("categories.name #{@order}")
+    else
+      @pull_requests = PullRequest.order(@sort => @order)
+    end
+
+      
   end
 
   # GET /pull_requests/1 or /pull_requests/1.json

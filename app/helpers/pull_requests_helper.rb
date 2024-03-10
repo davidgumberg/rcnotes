@@ -7,7 +7,7 @@ module PullRequestsHelper
     options_for_select([
       ["Date", "merged_at"],
       ["Test Priority", "test_priority"],
-      ["Category", "category_id"]
+      ["Category", "category"]
     ], selected)
   end
 end
