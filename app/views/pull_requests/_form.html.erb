@@ -19,7 +19,7 @@
     <div class="pull-request-annotations">
         <div>
           <%= form.label :category %>
-          <%= form.select :category_id, category_select_options(selected: pull_request.category)  %>
+          <%= form.select :category_id, category_select_options(selected: pull_request.category_id)  %>
         </div>
         <div>
           <%= form.label :test_priority %>
