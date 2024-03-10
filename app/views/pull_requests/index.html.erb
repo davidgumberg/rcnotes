@@ -25,11 +25,14 @@
 
 <div class="pull-requests-index">
   <% @pull_requests.each do |pull_request| %>
-    <%= turbo_frame_tag pull_request, src: pull_request_path(pull_request), loading: :lazy do %>
+    <%= turbo_frame_tag pull_request, src: pull_request_path(pull_request),
+                        loading: :lazy, class: "pull-request-container" do %>
       <div class="pull-request-box">
         <div class="pull-request-info">
         </div>
         <div class="pull-request-annotations">
+        </div>
+        <div class="pull-request-notes">
         </div>
       </div>
     <% end %>
