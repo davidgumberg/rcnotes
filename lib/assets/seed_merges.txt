@@ -14,8 +14,6 @@ bitcoin-core/gui#801
 bitcoin/bitcoin#29524#p2p
 bitcoin/bitcoin#29528#build
 bitcoin/bitcoin#29263#serialization
-bitcoin/bitcoin#29495#fuzz
-bitcoin/bitcoin#29518#doc
 bitcoin/bitcoin#29407#build
 bitcoin/bitcoin#29390#test
 bitcoin/bitcoin#29516#test
