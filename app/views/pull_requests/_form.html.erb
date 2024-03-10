@@ -1,0 +1,39 @@
+<%= form_with(model: pull_request) do |form| %>
+  <div class="pull-request-box">
+    <% if pull_request.errors.any? %>
+      <div class="pull-request-errors" style="color: red">
+        <h2><%= pluralize(pull_request.errors.count, "error") %> prohibited this PR from being saved:</h2>
+        <ul>
+          <% pull_request.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="pull-request-info">
+      <%= link_to "#{pull_request.repository}\##{pull_request.number}", pull_request.url %>
+
+      <p><%= pull_request.title %></p>
+      <p class="pull-request-time"><%= pull_request.merged_at&.strftime("%Y-%m-%d %H:%M") %></p>
+    </div>
+    <div class="pull-request-annotations">
+        <div>
+          <%= form.label :category %>
+          <%= form.select :category_id, category_select_options(selected: pull_request.category)  %>
+        </div>
+        <div>
+          <%= form.label :test_priority %>
+          <%= form.select :test_priority, options_for_select(PullRequest.test_priorities.keys, pull_request.test_priority) %>
+        </div>
+    </div>
+        <div class="pull-request-notes">
+          <%= form.markdown_field :notes %>
+        </div>
+        <div class="pull-request-editor">
+          <%= link_to "Cancel", pull_request, class: "button" %>
+          <%= form.submit %>
+        </div>
+    </div>
+  </div>
+<% end %>
+

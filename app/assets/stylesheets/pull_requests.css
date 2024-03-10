@@ -1,0 +1,74 @@
+.pull-requests-index {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 1rem;
+}
+
+.pull-request-box {
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 1rem;
+	margin: 1rem;
+	gap: .3rem;
+
+	border: .22rem solid rgb(170, 60, 100);
+	border-radius: 4px 6px;
+	background: rgb(255, 240, 240);
+
+	max-width: 40rem;
+
+	min-width: 33rem;
+	min-height: 10rem;
+}
+
+.pull-request-info {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 1em;
+	align-items: center;
+}
+
+.pull-request-annotations {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	gap: 1em;
+}
+
+.pull-request-annotations div {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	gap: .2em;
+}
+
+.pull-request-notes {
+	background-color: rgb(230, 230, 255);
+	border: .15rem solid rgb(100, 140, 210);
+	padding: .4rem 1rem;
+	min-width: 50%;
+	min-height: 2rem;
+}
+
+.pull-request-time {
+	opacity: 60%;
+	font-size: .8rem;
+}
+
+.sort-selectors-form {
+	align-self: center;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+
+	width: min(80%, 30rem);
+
+	background: rgb(240, 250, 240);
+	border: 1px rgb(30, 100, 100) solid;
+	
+	gap: .8rem;
+	margin: 1rem auto;
+}
+
+.sort-selectors-form div {
+}

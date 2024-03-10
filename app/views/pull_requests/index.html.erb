@@ -1,0 +1,37 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Bitcoin Core 27.0 Release Candidate Test Guide</h1>
+<h3>PR Notes</h3>
+
+<%= form_with class: "sort-selectors-form", url: pull_requests_path,
+              method: :get,
+              data: {
+                "controller": "submit-on-change",
+                "action": "change->submit-on-change#change",
+                "submit-on-change-target": "form"
+              } do |form| %>
+  <div>
+    <%= form.label :sort, "Sort by" %>
+    <%= form.select :sort, pull_request_sort_select_options(selected: @sort) %>
+  </div>
+  <div>
+    <%= form.label :sort, "Direction" %>
+    <%= form.select :order,
+                    options_for_select([["Ascending", "asc"],
+                                        ["Descending", "desc"],
+                                        ], @order) %>
+  </div>
+<% end %>
+
+<div class="pull-requests-index">
+  <% @pull_requests.each do |pull_request| %>
+    <%= turbo_frame_tag pull_request, src: pull_request_path(pull_request), loading: :lazy do %>
+      <div class="pull-request-box">
+        <div class="pull-request-info">
+        </div>
+        <div class="pull-request-annotations">
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

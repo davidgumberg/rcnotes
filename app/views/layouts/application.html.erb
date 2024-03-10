@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Core 27.0 RC Testing Guide</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="turbo-refresh-method" content="morph">
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "https://cdn.simplecss.org/simple.min.css",
+                            "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><%= link_to "Pull Requests", pull_requests_path %></li>
+          <li><%= link_to "Categories", categories_path %></li>
+        </ul>
+      </nav>
+    </header>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%= turbo_frame_tag @pull_request do %>
+  <%= render @pull_request %>
+<% end %>
+
+<div>
+  <%= link_to "Edit this pull request", edit_pull_request_path(@pull_request) %> |
+  <%= link_to "Back to pull requests", pull_requests_path %>
+
+  <%= button_to "Destroy this pull request", @pull_request, method: :delete %>
+</div>

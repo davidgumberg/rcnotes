@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  num: 1
+  url: MyString
+  title: MyString
+  repository: MyString
+  notes: MyText
+  category: one
+  merged_at: 2024-03-09 12:17:10
+
+two:
+  num: 1
+  url: MyString
+  title: MyString
+  repository: MyString
+  notes: MyText
+  category: two
+  merged_at: 2024-03-09 12:17:10
