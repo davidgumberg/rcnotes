@@ -5,6 +5,19 @@ class PullRequestsController < ApplicationController
   def index
     @sort = params[:sort] || :merged_at
     @order = params[:order] || :asc
+    @category_filter = params[:category_filter] || Category.pluck(:id)
+
+    if @sort == "category"
+      @pull_requests = PullRequest.joins(:category).order("categories.name #{@order}")
+    else
+      @pull_requests = PullRequest.order(@sort => @order)
+    end
+  end
+
+  def sorted
+    @sort = params[:sort] || :merged_at
+    @order = params[:order] || :asc
+    @category_filter = params[:category_filter] || Category.pluck(:id)
 
     if @sort == "category"
       @pull_requests = PullRequest.joins(:category).order("categories.name #{@order}")
@@ -12,7 +25,7 @@ class PullRequestsController < ApplicationController
       @pull_requests = PullRequest.order(@sort => @order)
     end
 
-      
+    render :index, status: 422
   end
 
   # GET /pull_requests/1 or /pull_requests/1.json

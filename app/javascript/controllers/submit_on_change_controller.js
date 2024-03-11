@@ -6,6 +6,7 @@ export default class extends Controller {
   change() {
     this.formTarget.requestSubmit()
   }
+
   connect() {
   }
 }
